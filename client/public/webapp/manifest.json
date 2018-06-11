@@ -1,0 +1,109 @@
+{
+	"_version": "1.3.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "sap.inventorymanager",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"rootView": {
+			"viewName": "sap.inventorymanager.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"handleValidation": true,
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.40",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.40.0"
+				},
+				"sap.m": {
+					"minVersion": "1.40.0"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.40.0"
+				},
+				"it.designfuture.chartjs": {}
+			}
+		},
+		"models": {			
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.inventorymanager.i18n.i18n"
+				}
+			}
+		},     
+		"resources":{ 
+            "css": [{
+                "uri": "css/style.css"
+            }]
+        },
+		"resourceRoots":{
+			"it.designfuture.chartjs":"./thirdparty/it/designfuture/chartjs/"
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.inventorymanager.view",
+				"controlId": "navContainer",
+				"controlAggregation": "pages",
+				"transition": "show"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "information",
+					"target": [
+						"information"
+					]
+				},
+				{
+					"pattern": "Products",
+					"name": "products",
+					"target": [
+						"products"
+					]
+				}
+			],
+			"targets": {
+				"information": {
+					"viewName": "info.Information",
+					"viewLevel": 1,
+					"viewId": "information"
+				},
+				"products": {
+					"viewName": "product.Products",
+					"viewId": "products",
+					"viewLevel": 1
+				}
+			}
+		}		
+	}
+}

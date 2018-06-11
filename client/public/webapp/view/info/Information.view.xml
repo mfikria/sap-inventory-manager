@@ -1,0 +1,27 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:lab="it.designfuture.chartjs"
+	xmlns:layout="sap.ui.layout"
+	xmlns="sap.m" 
+	controllerName="sap.inventorymanager.controller.info.Information">
+
+    <Page showHeader="false">
+        <content>
+			<layout:Splitter width="100%" height="100%">
+				<layout:contentAreas>
+					<lab:BarChartJS
+							id="bar_chart"
+							class="sapUiSmallMargin"
+							datasets="{/barChart/datasets}"
+							labels="{/barChart/labels}"
+							titleDisplay="true"
+							titleText="Units Ordered By Products"
+							tooltipEnabled="true"
+							isHorizontal="false">
+					</lab:BarChartJS>
+				</layout:contentAreas>
+			</layout:Splitter>
+        </content>
+    </Page>
+
+</mvc:View>

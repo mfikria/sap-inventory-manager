@@ -1,0 +1,23 @@
+{
+  "name": "sap-inventory-manager",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mfikria/sap-inventory-manager",
+  "author": {
+    "name": "Muhamad Fikri Alhawarizmi",
+    "email": "mfikria@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mfikria/sap-inventory-manager.git"
+  },
+  "engines": {
+    "node": "8.9.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cfenv": "^1.0.3",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.10",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,61 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns="sap.m" 
+	controllerName="sap.inventorymanager.controller.product.Products">
+
+    <Page showHeader="false">
+        <content>
+	        <Table id="productTable"
+				   items="{ path: '/', sorter: { path: 'id' } }"
+				   class="sapUiResponsiveMargin sapUiNoMarginTop"
+				   growing="true"
+				   growingScrollToLoad="true"
+				   width="auto">
+		        <headerToolbar>
+			        <Toolbar>
+				        <Title text="{i18n>products}"/>
+                        <ToolbarSpacer/>                        
+                        <Button icon="sap-icon://add" press="onAddProduct"/>
+                        <Button icon="sap-icon://refresh" press="onRefreshProduct"/>
+			        </Toolbar>
+		        </headerToolbar>
+		        <columns>
+			        <Column>
+				        <Text text="{i18n>id}" />
+			        </Column>
+			        <Column>
+			        	<Text text="{i18n>productName}" />
+			        </Column>
+			        <Column>
+				        <Text text="{i18n>supplier}" />
+			        </Column>     
+			        <Column>
+				        <Text text="{i18n>price}" />
+			        </Column>
+					<Column>
+						<Text text="{i18n>unitsOnOrder}" />
+					</Column>
+					<Column>
+						<Text text="{i18n>unitsInStock}" />
+					</Column>
+					<Column hAlign="Right">
+                    </Column>                 
+		        </columns>
+		        <items>
+			        <ColumnListItem>
+				        <cells>
+                            <Text text="{id}"/>
+                            <Text text="{name}"/>
+                            <Text text="{supplier}"/>
+                            <Text text="{price}"/>
+                            <Text text="{units_on_order}"/>
+                            <Text text="{units_in_stock}"/>
+                            <Button icon="sap-icon://delete" press="onDeleteProduct"/>
+				        </cells>
+			        </ColumnListItem>
+		        </items>
+	        </Table>
+        </content>
+    </Page>
+</mvc:View>
